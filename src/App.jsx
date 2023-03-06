@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 
-function Die(props) {
+function Die({ isHeld, holdDice, value }) {
   const styles = {
-    backgroundColor: props.isHeld ? "#59E391" : "white",
+    backgroundColor: isHeld ? "#59E391" : "white",
   };
   return (
-    <div className="die-face" style={styles} onClick={props.holdDice}>
-      <h2 className="die-num">{props.value}</h2>
+    <div className="die-face" style={styles} onClick={holdDice}>
+      <h2 className="die-num">{value}</h2>
     </div>
   );
 }
